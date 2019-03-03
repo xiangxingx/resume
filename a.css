@@ -141,8 +141,8 @@ hr{
 .userCard > footer.media > a{
   display: inline-block;
   width: 40px;
-  line-height: 40px;
-  padding: 5px;
+  line-height: 30px;
+  padding: 5px 0;
   border-radius: 50%;
   margin: 16px;
 }
