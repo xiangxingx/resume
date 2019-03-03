@@ -138,3 +138,8 @@ hr{
 .userCard > footer.media{
   background: #e06567
 }
+.userCard svg{
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
