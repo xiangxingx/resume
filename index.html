@@ -1,190 +1,224 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>我的简历</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="loading.css" />
+    <script src="//at.alicdn.com/t/font_1068186_3dst38n64um.js"></script>
+    <style type="text/css">
+      .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+      .welcome {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      .welcome.active {
+        display: flex;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>我的简历</title>
-  <link rel="stylesheet" href="main.css">
-  <script src="//at.alicdn.com/t/font_1068186_3dst38n64um.js"></script>
-  <style type="text/css">
-    .icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.15em;
-      fill: currentColor;
-      overflow: hidden;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="topNavBar clearfix">
-    <a class="logo " href="#" style="float: left;">
-      <span class="xj">XJ</span><span class="card">card</span>
-    </a>
-    <nav style="float: right;">
-      <ul class="clearfix">
-        <li>
-          <a href="#">关于</a>
-        </li>
-        <li>
-          <a href="#">技能</a>
-        </li>
-        <li>
-          <a href="#">作品</a>
-        </li>
-        <li>
-          <a href="#">博客</a>
-        </li>
-        <li>
-          <a href="#">联系方式</a>
-        </li>
-        <li>
-          <a href="#">其他</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div class="banner">
-    <div class="bannerMask"></div>
-  </div>
-  <main>
-    <div class="usercard">
-      <div class="pictureAndTxet clearfix">
-        <div class="picture">
-          <img src="./img/avatar299x347.jpg" alt="个人相片">
-        </div>
-        <div class="text">
-          <span class="hello">hello
-            <span class="triangle"></span>
-          </span>
-
-          <h1>向 军</h1>
-          <p>前端开发工程师</p>
-          <hr>
-          <dl class="information clearfix">
-            <dt>年龄</dt>
-            <dd>27</dd>
-            <dt>城市</dt>
-            <dd>成都</dd>
-            <dt>电话</dt>
-            <dd>13808190819</dd>
-            <dt>邮箱</dt>
-            <dd>xiangxing8978@163.com</dd>
-          </dl>
-        </div>
-      </div>
-      <footer class="media">
-        <a href="#">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-git"></use>
-          </svg>
-        </a>
-        <a href="#">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-weibiaoti-"></use>
-          </svg>
-        </a>
-        <a href="#">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-zhihu">知乎</use>
-          </svg>
-        </a>
-      </footer>
+  <body>
+    <div id="siteWelcome" class="welcome active">
+      <div class="loading"></div>
     </div>
-  </main>
-  <p class="downloadResume">
-    <a class="resume-pdf" href="./resume.pdf" target="_blank" download>下载PDF简历</a>
-  </p>
-  <p class="selfIntroduction">向军，前端工程师，前端工程师，前端工程师，前端工程师。<br> 技能：前端开发，Rails 开发，Node.js 开发</p>
-  <section class="skill">
-    <h2>技能</h2>
-    <ul class="clearfix">
-      <li>
-        <h3>
-          HTML 5 & CSS 3
-        </h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 60%"></div>
+    <div id="topNavBar" class="topNavBar clearfix">
+      <a class="logo " href="#" style="float: left;">
+        <span class="xj">XJ</span><span class="card">card</span>
+      </a>
+      <nav style="float: right;">
+        <ul class="clearfix">
+          <li>
+            <a href="#">关于</a>
+          </li>
+          <li>
+            <a href="#">技能</a>
+          </li>
+          <li>
+            <a href="#">作品</a>
+          </li>
+          <li>
+            <a href="#">博客</a>
+          </li>
+          <li>
+            <a href="#">联系方式</a>
+          </li>
+          <li>
+            <a href="#">其他</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="banner">
+      <div class="bannerMask"></div>
+    </div>
+    <main>
+      <div class="usercard">
+        <div class="pictureAndTxet clearfix">
+          <div class="picture">
+            <img src="./img/avatar299x347.jpg" alt="个人相片" />
+          </div>
+          <div class="text">
+            <span class="hello"
+              >hello
+              <span class="triangle"></span>
+            </span>
+            <h1>向 军</h1>
+            <p>前端开发工程师</p>
+            <hr />
+            <dl class="information clearfix">
+              <dt>年龄</dt>
+              <dd>27</dd>
+              <dt>城市</dt>
+              <dd>成都</dd>
+              <dt>电话</dt>
+              <dd>13808190819</dd>
+              <dt>邮箱</dt>
+              <dd>xiangxing8978@163.com</dd>
+            </dl>
+          </div>
         </div>
-      </li>
-      <li>
-        <h3>
-          jQuery
-        </h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 70%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>
-          React.js
-        </h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 65%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>
-          JavaScript
-        </h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 80%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>
-          Vue.js
-        </h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 75%"></div>
-        </div>
-      </li>
-      <li>
-        <h3>
-          Node.js
-        </h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 65%"></div>
-        </div>
-      </li>
-    </ul>
-  </section>
-  <section class="sampleReels">
-    <h2>作品集</h2>
-    <nav>
-      <ul class="clearfix">
-        <li id="sampleReels1">所有</li>
-        <li id="sampleReels2">框架</li>
-        <li id="sampleReels3">原生JS&CSS</li>
-      </ul>
-      <div id="sampleReelsBar" class="bar state-1">
-        <div class="bar-inner"></div>
+        <footer class="media">
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-git"></use>
+            </svg>
+          </a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weibiaoti-"></use>
+            </svg>
+          </a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-zhihu">知乎</use>
+            </svg>
+          </a>
+        </footer>
       </div>
-    </nav>
+    </main>
+    <p class="downloadResume">
+      <a class="resume-pdf" href="./resume.pdf" target="_blank" download
+        >下载PDF简历</a
+      >
+    </p>
+    <p class="selfIntroduction">
+      向军，前端工程师，前端工程师，前端工程师，前端工程师。<br />
+      技能：前端开发，Rails 开发，Node.js 开发
+    </p>
+    <section class="skill">
+      <h2>技能</h2>
+      <ul class="clearfix">
+        <li>
+          <h3>
+            HTML 5 & CSS 3
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 60%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            jQuery
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 70%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            React.js
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 65%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            JavaScript
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 80%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            Vue.js
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 75%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>
+            Node.js
+          </h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 65%"></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="sampleReels">
+      <h2>作品集</h2>
+      <nav>
+        <ul class="clearfix">
+          <li id="sampleReels1">所有</li>
+          <li id="sampleReels2">框架</li>
+          <li id="sampleReels3">原生JS&CSS</li>
+        </ul>
+        <div id="sampleReelsBar" class="bar state-1">
+          <div class="bar-inner"></div>
+        </div>
+      </nav>
+      <script>
+        sampleReels1.onclick = function() {
+          sampleReelsBar.className = "bar state-1";
+        };
+        sampleReels2.onclick = function() {
+          sampleReelsBar.className = "bar state-2";
+        };
+        sampleReels3.onclick = function() {
+          sampleReelsBar.className = "bar state-3";
+        };
+      </script>
+      <div class="works">
+        <div class="big">
+          <img src="./img/1.jpg" alt="作品1" />
+        </div>
+        <div class="small1">
+          <img src="./img/2.jpg" alt="作品2" />
+        </div>
+        <div class="small2">
+          <img src="./img/3.jpg" alt="作品3" />
+        </div>
+      </div>
+    </section>
     <script>
-      sampleReels1.onclick = function () {
-        sampleReelsBar.className = 'bar state-1'
-      }
-      sampleReels2.onclick = function () {
-        sampleReelsBar.className = 'bar state-2'
-      }
-      sampleReels3.onclick = function () {
-        sampleReelsBar.className = 'bar state-3'
-      }
+      setTimeout(function() {
+        siteWelcome.classList.remove("active");
+      }, 500);
+      window.onscroll = function() {
+        if(window.scrollY > 0){
+          topNavBar.classList.add('sticky')
+        }else{
+          topNavBar.classList.remove('sticky')
+        }
+      };
     </script>
-    <div class="works">
-      <div class="big">
-        <img src="./img/1.jpg" alt="作品1">
-      </div>
-      <div class="small1">
-        <img src="./img/2.jpg" alt="作品2">
-      </div>
-      <div class="small2">
-        <img src="./img/3.jpg" alt="作品3">
-      </div>
-    </div>
-  </section>
-</body>
-
+  </body>
 </html>
