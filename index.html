@@ -37,19 +37,29 @@
       <div class="loading"></div>
     </div>
     <div id="topNavBar" class="topNavBar clearfix">
-      <a class="logo " href="#" style="float: left;">
+      <a class="logo" href="#" style="float: left;">
         <span class="xj">XJ</span><span class="card">card</span>
       </a>
-      <nav style="float: right;">
+      <nav class="menu" style="float: right;">
         <ul class="clearfix">
           <li>
-            <a href="#">关于</a>
+            <a href="#siteAbout">关于</a>
           </li>
-          <li>
-            <a href="#">技能</a>
+          <li class="menuTigger">
+            <a href="#siteSkills">技能</a>
+            <ul class="submenu">
+              <li>技能1</li>
+              <li>技能2</li>
+              <li>技能3</li>
+            </ul>
           </li>
-          <li>
-            <a href="#">作品</a>
+          <li class="menuTigger">
+            <a href="#siteWorks">作品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
           </li>
           <li>
             <a href="#">博客</a>
@@ -67,7 +77,7 @@
       <div class="bannerMask"></div>
     </div>
     <main>
-      <div class="usercard">
+      <div id="siteAbout" class="usercard">
         <div class="pictureAndTxet clearfix">
           <div class="picture">
             <img src="./img/avatar299x347.jpg" alt="个人相片" />
@@ -120,7 +130,7 @@
       向军，前端工程师，前端工程师，前端工程师，前端工程师。<br />
       技能：前端开发，Rails 开发，Node.js 开发
     </p>
-    <section class="skill">
+    <section id="siteSkills" class="skill">
       <h2>技能</h2>
       <ul class="clearfix">
         <li>
@@ -173,7 +183,7 @@
         </li>
       </ul>
     </section>
-    <section class="sampleReels">
+    <section id="siteWorks" class="sampleReels">
       <h2>作品集</h2>
       <nav>
         <ul class="clearfix">
@@ -210,15 +220,35 @@
     </section>
     <script>
       setTimeout(function() {
-        siteWelcome.classList.remove("active");
-      }, 500);
+        siteWelcome.classList.remove("active")
+      }, 500)
       window.onscroll = function() {
-        if(window.scrollY > 0){
-          topNavBar.classList.add('sticky')
-        }else{
-          topNavBar.classList.remove('sticky')
+        if (window.scrollY > 0) {
+          topNavBar.classList.add("sticky")
+        } else {
+          topNavBar.classList.remove("sticky")
         }
-      };
+      }
+      let liTags = document.getElementsByClassName("menuTigger");
+      for (let i = 0; i < liTags.length; i++) {
+        liTags[i].onmouseenter = function(x) {
+          x.currentTarget.classList.add("active")
+        }
+        liTags[i].onmouseleave = function(x) {
+          x.currentTarget.classList.remove("active")
+        }
+      }
+      let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+      for (let i=0; i<aTags.length; i++){
+        aTags[i].onclick = function(x){
+          x.preventDefault()
+          let a = x.currentTarget
+          let href = a.getAttribute('href')
+          let element = document.querySelector(href)
+          let top = element.offsetTop
+          window.scrollTo(0, top - 80)
+        }
+      }
     </script>
   </body>
 </html>
