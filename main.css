@@ -70,7 +70,8 @@ hr {
   padding: 3px 1px;
   position: relative;
 }
-.topNavBar > nav > ul > li > a:hover::after {
+.topNavBar nav > ul > li > a:hover::after,
+.topNavBar > nav > ul > li.highlight > a::after {
   content: "";
   display: block;
   position: absolute;
@@ -123,6 +124,9 @@ hr {
 .banner .bannerMask {
   height: 515px;
   background-color: rgba(0, 0, 0, 0.7);
+}
+[data-x].active {
+  outline: 10px solid #cf5d5f;
 }
 .usercard {
   max-width: 940px;
