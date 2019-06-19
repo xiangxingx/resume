@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>我的简历</title>
-  <link rel="stylesheet" href="main.css" />
-  <link rel="stylesheet" href="loading.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <link rel="stylesheet" href="main.css">
   <script src="//at.alicdn.com/t/font_1068186_3dst38n64um.js"></script>
-  <script src="jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
   <style type="text/css">
     .icon {
       width: 1em;
@@ -17,22 +19,6 @@
       overflow: hidden;
     }
 
-    .welcome {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      z-index: 1;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .welcome.active {
-      display: flex;
-    }
   </style>
 </head>
 
@@ -80,6 +66,7 @@
   <div class="banner">
     <div class="bannerMask"></div>
   </div>
+
   <main>
     <div data-x id="siteAbout" class="usercard">
       <div class="pictureAndTxet clearfix">
@@ -124,6 +111,9 @@
       </footer>
     </div>
   </main>
+
+
+
   <p class="downloadResume">
     <a class="resume-pdf" href="./resume.pdf" target="_blank" download>下载PDF简历</a>
   </p>
@@ -184,42 +174,46 @@
       </li>
     </ul>
   </section>
+
   <section data-x id="siteWorks" class="sampleReels">
     <h2>作品集</h2>
-    <nav>
-      <ul class="clearfix">
-        <li id="sampleReels1">所有</li>
-        <li id="sampleReels2">框架</li>
-        <li id="sampleReels3">原生JS&CSS</li>
-      </ul>
-      <div id="sampleReelsBar" class="bar state-1">
-        <div class="bar-inner"></div>
-      </div>
-    </nav>
-    <script>
-      sampleReels1.onclick = function () {
-        sampleReelsBar.className = "bar state-1";
-      };
-      sampleReels2.onclick = function () {
-        sampleReelsBar.className = "bar state-2";
-      };
-      sampleReels3.onclick = function () {
-        sampleReelsBar.className = "bar state-3";
-      };
-    </script>
+
     <div class="works">
-      <div class="big">
-        <img src="./img/1.jpg" alt="作品1" />
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <img src="./img/works/nav.jpg" class="swiper-slide">
+          <img src="./img/works/canvas.jpg" class="swiper-slide">
+          <img src="./img/works/slide.jpg" class="swiper-slide">
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="small1">
-        <img src="./img/2.jpg" alt="作品2" />
-      </div>
-      <div class="small2">
-        <img src="./img/3.jpg" alt="作品3" />
+      <div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
   </section>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })
+  </script>
   <script>
     setTimeout(function () {
       siteWelcome.classList.remove("active")
@@ -232,12 +226,12 @@
       }
       let specialTags = document.querySelectorAll('[data-x]')
       let minIndex = 0
-      for(let i = 1; i<specialTags.length; i++){
-        if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+      for (let i = 1; i < specialTags.length; i++) {
+        if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
           minIndex = i
         }
       }
-      for(let i = 0; i<specialTags.length; i++){
+      for (let i = 0; i < specialTags.length; i++) {
         specialTags[i].classList.remove('active')
       }
       specialTags[minIndex].classList.add('active')
@@ -245,7 +239,7 @@
       let a = document.querySelector('a[href="#' + id + '"]')
       let li = a.parentNode
       let brothersAndMe = li.parentNode.children
-      for(let i = 0; i<brothersAndMe.length; i++){
+      for (let i = 0; i < brothersAndMe.length; i++) {
         brothersAndMe[i].classList.remove('highlight')
       }
       li.classList.add('highlight')

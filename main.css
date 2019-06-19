@@ -125,9 +125,6 @@ hr {
   height: 515px;
   background-color: rgba(0, 0, 0, 0.7);
 }
-[data-x].active {
-  outline: 10px solid #cf5d5f;
-}
 .usercard {
   max-width: 940px;
   margin-left: auto;
@@ -272,74 +269,37 @@ hr {
   border-radius: 2px;
 }
 .sampleReels {
-  max-width: 940px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px;
   text-align: center;
+  position: relative;
 }
 .sampleReels > h2 {
   font-weight: 700;
   font-size: 34px;
   color: #3d4451;
   letter-spacing: 8px;
+  margin-bottom: 30px;
 }
-.sampleReels > nav {
-  margin-top: 30px;
-  display: inline-block;
-  vertical-align: top;
+.sampleReels .swiper-container {
+  width: 668px;
+  height: 501px;
+  z-index: 0;
 }
-.sampleReels > nav > ul > li {
-  float: left;
-  padding-left: 40px;
-  padding-bottom: 6px;
-  cursor: pointer;
+.sampleReels .swiper-button-next,
+.sampleReels .swiper-button-prev{
+background-color: white;
+width: 64px;
+height: 64px;
+border-radius: 50%;
 }
-.sampleReels > nav > ul > li:nth-child(1) {
-  padding-left: 0;
+.sampleReels .swiper-button-next{
+  right: auto;
+  left: 100%;
 }
-.sampleReels .bar {
-  height: 5px;
-  background: #fff;
-  border-radius: 2px;
-}
-.sampleReels .bar-inner {
-  height: 100%;
-  background: #e6686a;
-  border-radius: 2px;
-  width: 20%;
-  transition: all 0.2s;
-}
-.sampleReels .bar.state-1 .bar-inner {
-  margin-left: 0;
-  width: 32px;
-}
-.sampleReels .bar.state-2 .bar-inner {
-  margin-left: 71px;
-  width: 35px;
-}
-.sampleReels .bar.state-3 .bar-inner {
-  margin-left: 143px;
-  width: 92px;
-}
-.sampleReels .works {
-  position: relative;
-  margin-top: 35px;
-  height: 597px;
-  margin-bottom: 100px;
-}
-.sampleReels .works .big {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.sampleReels .works .small1 {
-  position: absolute;
-  top: 0;
-  left: 645px;
-}
-.sampleReels .works .small2 {
-  position: absolute;
-  top: 312px;
-  left: 645px;
+.sampleReels .swiper-button-prev{
+  right: 100%;
+  left: auto;
 }
