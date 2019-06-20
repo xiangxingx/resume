@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
 }
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 body {
   background-color: #efefef;
 }
@@ -26,6 +33,24 @@ hr {
   content: "";
   display: block;
   clear: both;
+}
+[data-x].active{
+  outline: 10px solid red;
+}
+[data-x].offset{
+  transform: translateY(100px);
+}
+[data-x]{
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+@keyframes slideUp{
+  0%{
+    transform: translateY(-30px);
+  }
+  100%{
+    transform: translateY(0);
+  }
 }
 .topNavBar {
   padding: 20px 0;
@@ -275,6 +300,7 @@ hr {
   margin-top: 60px;
   text-align: center;
   position: relative;
+  margin-bottom: 80px;
 }
 .sampleReels > h2 {
   font-weight: 700;
