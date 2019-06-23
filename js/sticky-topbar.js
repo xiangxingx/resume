@@ -1,5 +1,5 @@
 !function () {
-  var view = document.querySelector('#topNavBar') // 声明一个变量view
+  var view = View('#topNavBar') // 声明一个变量view
   var controller = { //声明一个对象controller;controller的所有属性，就是对view的所有操作；
     view: null,
     init: function (view) {
